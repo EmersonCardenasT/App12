@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+                <On Platform="Android" Value="FontAwesome6Regula400.otf#Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+                <On Platform="Android" Value="FontAwesome6Brands400.otf#Brands" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
+                <On Platform="Android" Value="FontAwesome6Solid900.otf#Solid" />
+            </OnPlatform>
+        </ResourceDictionary>
+
+        <Color x:Key="pkcolor" >#97e1b0</Color>
+        <Style x:Key="btn-inicio" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="{StaticResource pkcolor}" />
+            <Setter Property="TextColor"  Value="#3b3b3b"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="60, 30" />
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+
+        <Color x:Key="pkcolor3" >blue</Color>
+        <Style x:Key="btn-registrarse" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="{StaticResource pkcolor3}" />
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="60, 30" />
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+
+        <Color x:Key="pkcolor2" >#4b71f5</Color>
+        <Style x:Key="btn-ingresar" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="{StaticResource pkcolor2}" />
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="100, 30" />
+            <Setter Property="CornerRadius" Value="30"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Application.Resources>
+</Application>

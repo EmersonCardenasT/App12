@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Componentes.Informacion">
+  <ContentView.Content>
+      <StackLayout>
+            <Frame 
+       Margin="10"
+       CornerRadius="8"
+       HasShadow="False"
+       Padding="10,5">
+
+                <StackLayout Padding="0">
+                    <Label Text="Piscina San Gabriel de la Rosa" 
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="15"
+               />
+                    <Label Text="Av. Perú, Mazamari - Satipo" 
+               TextColor="Gray"
+               FontAttributes="Bold"
+               FontSize="13"
+               VerticalOptions="Start"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="5,4 ration" />
+                        <Label Text="5,4 ration" />
+                        <Label Text="5,4 ration" />
+                        <Label Text="5,4 ration" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+
+            </Frame>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

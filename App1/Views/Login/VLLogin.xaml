@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Login.VLLogin"
+             BackgroundImageSource="https://img.freepik.com/vector-premium/fondo-degradado-vertical-colorido-ilustracion-vector-marco-redes-sociales_343173-299.jpg"
+             Title="Iniciar Sesión">
+    <ContentPage.Content>
+        <StackLayout Margin="40, 10">
+            <!-- Contenedor con sombreado -->
+            <Frame Padding="20"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   BackgroundColor="White">
+                <StackLayout>
+                    <!-- Imagen -->
+                    <Frame Padding="0"
+                           CornerRadius="40"
+                           Margin="0,30,0,0">
+                        <Image Aspect="AspectFill" Source="https://img.freepik.com/vector-gratis/ilustracion-concepto-inicio-sesion_114360-739.jpg" />
+                    </Frame>
+
+                    <!-- Usuario -->
+                    <Label FontAttributes="Bold" Text="Usuario" />
+                    <Frame CornerRadius="15" Padding="10,1">
+                        <Entry x:Name="txtUsuario" Placeholder="Ingrese Usuario" />
+                    </Frame>
+
+                    <!-- Contraseña -->
+                    <Label FontAttributes="Bold" Text="Contraseña" />
+                    <Frame CornerRadius="15" Padding="10,1">
+                        <Entry x:Name="txtContraseña" IsPassword="True" Placeholder="Ingrese Contraseña" />
+                    </Frame>
+
+                    <!-- Botón Ingresar -->
+                    <Button Text="Ingresar" x:Name="btnLogin" Clicked="btnLogin_Clicked"
+                            BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="15" Margin="0,20,0,0" />
+
+                    <!-- Mensaje de respuesta -->
+                    <Label IsVisible="false" x:Name="lblRespuesta" TextColor="Red" Text="Respuesta" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Texto y botón de registro -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label Text="¿No tienes una cuenta?" FontAttributes="Bold" />
+                <Button Text="Registrarse" x:Name="btnRegistrare" Clicked="btnRegistrare_Clicked"
+                        BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="15" Margin="10,0,0,0" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

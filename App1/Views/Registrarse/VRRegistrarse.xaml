@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Registrarse.VRRegistrarse"
+             Title="Registrarse">
+    <ContentPage.Content>
+        <StackLayout Margin="40, 10">
+            <!-- Contenedor con sombreado -->
+            <Frame Padding="20"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   BackgroundColor="White">
+                <StackLayout>
+                    <!-- Imagen -->
+                    <Frame Padding="0"
+                           CornerRadius="40"
+                           Margin="0,30,0,0">
+                        <Image Aspect="AspectFill" WidthRequest="200" Source="https://img.freepik.com/vector-premium/nino-esta-conectado-cuenta_118167-6635.jpg" />
+                    </Frame>
+
+                    <!-- Nombre -->
+                    <Label FontAttributes="Bold" Text="Nombre" />
+                    <Frame CornerRadius="15" Padding="10,1">
+                        <Entry x:Name="txtNombre" Placeholder="Ingrese Nombre" />
+                    </Frame>
+
+                    <!-- Apellidos -->
+                    <Label FontAttributes="Bold" Text="Apellidos" />
+                    <Frame CornerRadius="15" Padding="10,1">
+                        <Entry x:Name="txtApellidos" Placeholder="Ingrese Apellidos" />
+                    </Frame>
+
+                    <!-- Usuario -->
+                    <Label FontAttributes="Bold" Text="Usuario" />
+                    <Frame CornerRadius="15" Padding="10,1">
+                        <Entry x:Name="txtUsuario" Placeholder="Ingrese Usuario" />
+                    </Frame>
+
+                    <!-- Contraseña -->
+                    <Label FontAttributes="Bold" Text="Contraseña" />
+                    <Frame CornerRadius="15" Padding="10,1">
+                        <Entry x:Name="txtContraseña" IsPassword="True" Placeholder="Ingrese Contraseña" />
+                    </Frame>
+
+                    <!-- Botón Registrarse -->
+                    <Button Text="Registrarse" x:Name="btnRegistrarse" Clicked="btnRegistrarse_Clicked" Style="{StaticResource btn-ingresar}" />
+
+                    <!-- Mensaje de respuesta -->
+                    <Label IsVisible="false" x:Name="lblRespuesta" TextColor="Red" Text="Respuesta" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Texto y botón de inicio de sesión -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label Text="¿Ya tienes una cuenta?" FontAttributes="Bold" />
+                <Button Text="Iniciar Sesión" x:Name="btnIniciarSesion" Clicked="btnIniciarSesion_Clicked"  BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="15" Margin="10,0,0,0" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

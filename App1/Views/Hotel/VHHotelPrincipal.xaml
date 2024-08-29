@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Hotel.VHHotelPrincipal"
+             xmlns:local="clr-namespace:App1.ViewModel"
+             xmlns:Componentes="clr-namespace:App1.Views.Componentes">
+
+    <ContentPage.BindingContext>
+        <local:VMTurismo />
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!-- Contenedor de bienvenida -->
+            <Frame Padding="10"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Margin="0,20,0,0">
+                <Label x:Name="lblBienvenida"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="Black" />
+            </Frame>
+
+            <!-- Contenedor de búsqueda -->
+            <Frame Padding="20, 2" Margin="20,10" CornerRadius="30">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#xf002;" VerticalOptions="Center" FontFamily="{StaticResource FontAwesomeSolid}" />
+                    <Entry Placeholder="Buscar ..." />
+                </StackLayout>
+            </Frame>
+            <ScrollView>
+                <StackLayout Orientation="Horizontal" Margin="20,0">
+                    <Button BackgroundColor="#5ab97f " CornerRadius="30" TextColor="White" FontSize="12" FontAttributes="Bold" Padding="30, 2">
+                        <Button.ImageSource>
+                            <FontImageSource 
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                Glyph="&#xf594;"
+                                Size="Small"
+                                Color="White"/>
+                        </Button.ImageSource>
+                        <Button.Text>
+                            Hotel
+                        </Button.Text>
+                    </Button>
+                    <Button BackgroundColor="Transparent" BorderColor="Black" FontSize="12" BorderWidth="2" CornerRadius="30" TextColor="Gray" FontAttributes="Bold" Padding="28, 5">
+                        <Button.ImageSource>
+                            <FontImageSource 
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                Glyph="&#xf594;"
+                                Size="Small"
+                                Color="Black"/>
+                        </Button.ImageSource>
+                        <Button.Text>
+                            Rentals
+                        </Button.Text>
+                    </Button>
+                    <Button BackgroundColor="Transparent" BorderColor="Black" FontSize="12" BorderWidth="2" CornerRadius="30" TextColor="Gray" FontAttributes="Bold" Padding="28, 5">
+                        <Button.ImageSource>
+                            <FontImageSource 
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                Glyph="&#xf594;"
+                                Size="Small"
+                                Color="Black"/>
+                        </Button.ImageSource>
+                        <Button.Text>
+                            Restaurant
+                        </Button.Text>
+                    </Button>
+                </StackLayout>
+            </ScrollView>
+
+
+            <WebView x:Name="webView" WidthRequest="300" HeightRequest="200" />
+
+            <CollectionView  Margin="25,10"  ItemsSource="{Binding TurismoData}">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout>
+                            <Frame CornerRadius="20" Padding="0">
+                                <Grid>
+                                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Aspect="AspectFill" Source="{Binding Foto}" />
+                                    <Frame Grid.Row="0"
+                                   Grid.Column="0"
+                                   BackgroundColor="Black"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="StartAndExpand"
+                                   CornerRadius="20"
+                                   Margin="25,25"
+                                   Padding="25,10"
+                                   >
+                                        <Label Text="Recomendaciones" FontSize="12.1" FontAttributes="Bold" TextColor="White"/>
+                                    </Frame>
+                                    <Button x:Name="iconButton"
+        BackgroundColor="White"
+        Grid.Row="0" Grid.Column="1"
+        VerticalOptions="Start"
+        WidthRequest="50"
+        CornerRadius="50"
+        HorizontalOptions="End"
+        Margin="10,10"
+        Clicked="iconButton_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource
+            FontFamily="{StaticResource FontAwesomeRegular}"
+            Glyph="&#xf004;"
+            Size="Title"
+            Color="Black" />
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <Frame Grid.Column="0" 
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="2" 
+                                   Margin="10"
+                                   CornerRadius="8"
+                                   HasShadow="False"
+                                   Padding="10,5">
+
+                                        <StackLayout Padding="0">
+                                            <Label Text="{Binding Nombre}"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="15"
+                                           />
+                                            <Label Text="{Binding Direccion}"
+                                           TextColor="Gray"
+                                           FontAttributes="Bold"
+                                           FontSize="13"
+                                           VerticalOptions="Start"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Raiting}" />
+                                                <Label Text="{Binding Fecha}" />
+                                                <Label Text="{Binding Km}" />
+                                                <Label Text="5,4 ration" HorizontalOptions="EndAndExpand" />
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

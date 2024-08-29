@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Home.VHPrincipal"
+             BackgroundImageSource="https://img.freepik.com/foto-gratis/hermoso-amanecer-playa-cielo-azul_181624-26939.jpg"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Estilo para los botones -->
+            <Style x:Key="RoundedButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderColor" Value="White" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="150" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" Spacing="20">
+
+            <!-- Logo -->
+            <Image Source="logo.png" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" />
+
+            <!-- Título de la App -->
+            <Label Text="TRAVEL ONLINE" 
+                   FontSize="36" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="White" 
+                   Margin="0,10,0,0" />
+
+            <!-- Descripción -->
+            <Label Text="Aplicacion para contratar viajes y comprar pasajes, de todo en un solo lugar" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" 
+                   TextColor="White"
+                   Margin="0,0,0,20" />
+
+            <!-- Botones -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15">
+                <Button x:Name="btn_inicio" 
+                        Clicked="btn_inicio_Clicked" 
+                        Text="Iniciar Sesión" 
+                        Style="{StaticResource RoundedButtonStyle}" />
+
+                <Button x:Name="btn_registrarse" 
+                        Clicked="btn_registrarse_Clicked" 
+                        Text="Registrarse" 
+                        Style="{StaticResource RoundedButtonStyle}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

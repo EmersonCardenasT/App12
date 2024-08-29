@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Componentes.Recomendaciones">
+  <ContentView.Content>
+      <StackLayout>
+            <Frame 
+                                   BackgroundColor="Black"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="StartAndExpand"
+                                   CornerRadius="20"
+                                   Margin="25,25"
+                                   Padding="25,10"
+                                   >
+                <Label Text="Recomendaciones" FontSize="12.1" FontAttributes="Bold" TextColor="White"/>
+            </Frame>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

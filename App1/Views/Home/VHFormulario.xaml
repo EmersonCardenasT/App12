@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1.ViewModel"
+             x:Class="App1.Views.Home.VHFormulario">
+    <ContentPage.BindingContext>
+        <local:VMTurismo />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding TurismoData}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Foto}" WidthRequest="50" HeightRequest="50" />
+                            <Label Text="{Binding Nombre}" VerticalOptions="Center" />
+                            <Label Text="{Binding Direccion}" VerticalOptions="Center" />
+                            <Label Text="{Binding Raiting}" VerticalOptions="Center" />
+                            <Label Text="{Binding Km}" VerticalOptions="Center" />
+                            <Label Text="{Binding Fecha}" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
